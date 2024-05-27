@@ -1,38 +1,150 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  color: #555;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.product-list,
+.cart {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.product-list li {
+  background: linear-gradient(to bottom, #ffb6c1 0%, #ff69b4 100%);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.product-list li:nth-child(2n) {
+  background: linear-gradient(to bottom, #7fffd4 0%, #00ced1 100%);
+}
+
+.product-list li:nth-child(3n) {
+  background: linear-gradient(to bottom, #fa8072 0%, #ff6347 100%);
+}
+
+.product-list li:nth-child(4n) {
+  background: linear-gradient(to bottom, #20b2aa 0%, #008b8b 100%);
+}
+
+.product-list li h3 {
+  cursor: pointer;
+  color: #fff;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2em;
+  transition: color 0.3s;
+}
+
+.product-list li h3:hover {
+  color: #ff69b4;
+}
+
+.product-list li p {
+  color: #fff;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.product-list li button {
+  background: #ffd700;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.product-list li button:hover {
+  background: #ffa500;
+}
+
+.cart li {
+  background: #fff;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1 1 calc(100% - 20px);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cart li h3 {
+  color: #007bff;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+
+.cart li p {
+  color: #666;
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.cart li button {
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.cart li button:hover {
+  background: #cc0000;
+}
+
+.cart input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  margin-left: 10px;
 }
